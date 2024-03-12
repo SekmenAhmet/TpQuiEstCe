@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1000px, 500px;
+    grid-template-areas: 
+    "img question"; 
+}
+
+.img ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img {
+    grid-area: img;
+    width: 1000px;
+    height: 700px;
+    border: 1px solid red;
+}
+
+.questions {
+    grid-area: question;
+    width: 600px;
+    border: 1px solid blue;
+}
+
+.questions ul {
+    list-style-type: none;
+}
