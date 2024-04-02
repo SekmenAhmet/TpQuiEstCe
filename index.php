@@ -21,6 +21,53 @@
         $binaire .= strval($value);
     }
 
+    function S1($binaire) {
+        $compte = 0;
+        $s2 = [intval($binaire[0]), intval($binaire[2]), intval($binaire[4]) , intval($binaire[6])];
+        $compte = count($s2) % 2;
+        return $compte; 
+    }
+
+    function S2($binaire) {
+        $compte = 0;
+        $s2 = [intval($binaire[0]), intval($binaire[3]), intval($binaire[6])];
+        $compte = count($s2) % 2;
+        return $compte; 
+    }
+    
+    function S3($binaire) {
+        $compte = 0;
+        $s2 = [intval($binaire[3]), intval($binaire[4]),intval($binaire[5]), intval($binaire[6])];
+        $compte = count($s2) % 2;
+        return $compte; 
+    } 
+
+    function compareTable($binaire, $tab2){
+        $tab1[] = [];
+        $s1 = S1($binaire);
+        $s2 = S2($binaire);
+        $s3 = S3($binaire);
+        $tab1 = [$s1, $s2, $s3];
+        
+        foreach ($tab2 as $row) {
+            if ($tab1 == $tab2[$row]) {
+                echo "vous avez menti";
+            } else {
+                echo "Vous n'avez pas menti";
+            }
+        }
+        
+        
+        
+        
+        var_dump($tab1);
+    }
+
+    compareTable($binaire, $check);
+        
+    $check = [[1, 0, 0], [0, 1, 0], [1, 1, 0], [0, 0, 1], [1, 1, 1], [0, 1, 1], [1, 0, 1]];
+    
+    
     // echo $binaire;
 
     function compare(String $binaire) : bool{
